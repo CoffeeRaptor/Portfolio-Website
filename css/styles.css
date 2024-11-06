@@ -1,0 +1,223 @@
+/* Import Tailwind CSS components */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+/* Define Custom Variables */
+:root {
+    --primary-color: #3B5998;    /* Facebook Blue */
+    --secondary-color: #8B9DC3;  /* Light Blue */
+    --accent-color: #DFE3EE;     /* Lighter Blue */
+    --light-color: #F8FAFC;      /* Light Gray */
+    --dark-color: #1F2937;       /* Dark Gray */
+    --background-color: #F1F5F9; /* Background Gray */
+    --text-color: #111827;       /* Text Gray */
+}
+
+/* Apply Custom Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar Styles */
+#navbar {
+    background-color: rgba(59, 89, 152, 0.00);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#navbar.scrolled {
+    background-color: rgba(59, 89, 152, 1);
+}
+
+/* Navigation Button Styles */
+.nav-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Menu Styling */
+#mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(59, 89, 152, 0.85);
+    z-index: 40;
+}
+
+#mobile-menu.hidden {
+    display: none;
+}
+
+#mobile-menu .nav-button {
+    color: #fff;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+}
+
+#mobile-menu .nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero Section */
+#home {
+    background-image: url('images/background.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#home .absolute.inset-0 {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#typed-text {
+    color: var(--primary-color);
+}
+
+#cursor {
+    color: var(--primary-color);
+}
+
+/* Section Headings */
+section h2 {
+    color: var(--primary-color);
+}
+
+/* Button Styling for Sections */
+.section-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.section-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Certification Cards */
+#resume .bg-white {
+    transition: transform 0.3s;
+}
+
+#resume .bg-white:hover {
+    transform: translateY(-10px);
+}
+
+#resume .grid {
+    gap: 2rem;
+}
+
+/* Activity Icons */
+#activities img {
+    width: 50%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+/* Hover effect for filters */
+#activities .flex.flex-col.items-center:hover img {
+    filter: grayscale(0%);
+}
+
+/* Language Letters */
+#languages .text-8xl {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: #fff;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adjust Spacing */
+section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+#resume, #languages {
+    padding-top: 3.5rem;
+    padding-bottom: 7rem;
+}
+
+/* Adjust Heading Margin */
+#resume h2, #languages h2 {
+    margin-bottom: 4.5rem;
+}
+
+section h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+#activities h3,
+#languages h3 {
+    font-size: 1.25rem;
+}
+
+/* Increase Icon Sizes */
+#contact img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+/* Carousel Styles */
+#fact-cards {
+    width: 100%;
+    overflow: hidden;
+}
+
+#fact-cards > div {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+#fact-cards > div > div {
+    min-width: 100%;
+}
+
+/* Frame around carousel */
+#about .relative.border-4 {
+    border-color: var(--accent-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    #languages .text-8xl {
+        font-size: 4rem;
+    }
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shushanth Sanjay Kumar - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Meta Tags -->
+    <meta name="description" content="Shushanth Sanjay Kumar - DevOps Engineer Portfolio">
+    <meta name="keywords" content="DevOps, Engineer, Portfolio, AWS, Kubernetes, Terraform">
+    <meta name="author" content="Shushanth Sanjay Kumar">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-50 text-gray-800 font-poppins">
+
+<!-- Navigation Bar -->
+<nav id="navbar" class="fixed w-full z-50 transition duration-300">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold text-white">
+            <!-- Logo or Brand Name -->
+            <a href="#home">Shushanth Sanjay Kumar</a>
+        </div>
+        <!-- Navigation Links -->
+        <div class="hidden md:flex space-x-4">
+            <a href="#home" class="nav-button" data-key="nav-home">Home</a>
+            <a href="#about" class="nav-button" data-key="nav-about">About</a>
+            <a href="#resume" class="nav-button" data-key="nav-resume">Certifications</a>
+            <a href="#activities" class="nav-button" data-key="nav-activities">Freetime</a>
+            <a href="#languages" class="nav-button" data-key="nav-languages">Languages</a>
+            <a href="#contact" class="nav-button" data-key="nav-contact">Contact</a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">
+                <!-- SVG for menu button -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2" d="M4 8h16M4 16h16" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden">
+        <a href="#home" class="block px-4 py-2 nav-button" data-key="nav-home">Home</a>
+        <a href="#about" class="block px-4 py-2 nav-button" data-key="nav-about">About</a>
+        <a href="#resume" class="block px-4 py-2 nav-button" data-key="nav-resume">Certifications</a>
+        <a href="#activities" class="block px-4 py-2 nav-button" data-key="nav-activities">Freetime</a>
+        <a href="#languages" class="block px-4 py-2 nav-button" data-key="nav-languages">Languages</a>
+        <a href="#contact" class="block px-4 py-2 nav-button" data-key="nav-contact">Contact</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center"
+         style="background-image: url('images/background.png');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-white opacity-75"></div>
+    <!-- Hero Content -->
+    <div class="relative text-center text-gray-800 px-4 z-10">
+        <h1 class="text-5xl font-bold mb-4">Shushanth Sanjay Kumar</h1>
+        <p class="text-2xl mb-6">
+            <span id="typed-text"></span>
+            <span id="cursor" class="text-blue-600">|</span>
+        </p>
+    </div>
+</section>
+
+<!-- Fun Facts Section -->
+<section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Left Column - Image -->
+        <div class="flex justify-center">
+            <img src="images/profile.jpg" alt="Shushanth Sanjay Kumar"
+                 class="rounded-full w-64 h-64 object-cover shadow-lg">
+        </div>
+        <!-- Right Column - Fun Facts Carousel -->
+        <div class="relative border-4 border-gray-300 rounded-lg overflow-hidden">
+            <h2 class="text-4xl font-bold mb-6 text-center">Fun Facts About Me</h2>
+            <!-- Carousel Container -->
+            <div id="fact-cards" class="overflow-hidden">
+                <div class="flex transition-transform duration-500">
+                    <!-- Fact 1 -->
+                    <div class="flex-shrink-0 w-full">
+                        <div class="bg-white p-6">
+                            <p class="text-lg leading-relaxed">
+                                Being in Germany for a long time now, I am addicted to Sprudelwasser.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Fact 2 -->
+                    <div class="flex-shrink-0 w-full">
+                        <div class="bg-white p-6">
+                            <p class="text-lg leading-relaxed">
+                                If I don't take a sip of coffee in the morning, my day really hasn't started.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Fact 3 -->
+                    <div class="flex-shrink-0 w-full">
+                        <div class="bg-white p-6">
+                            <p class="text-lg leading-relaxed">
+                                I love Go Karting and tend to get very competitive.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Fact 4 -->
+                    <div class="flex-shrink-0 w-full">
+                        <div class="bg-white p-6">
+                            <p class="text-lg leading-relaxed">
+                                I have watched the Big Bang Theory over 4 times and I would still watch it one more time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="resume" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-12" data-key="resume-title">Certifications</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- AWS Solutions Architect Certification -->
+            <div class="bg-white rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition duration-300">
+                <a href="https://www.credly.com/badges/59112e5b-4903-49d8-9230-21af6d044e83" target="_blank">
+                    <img src="images/aws.png" alt="AWS Certified Solutions Architect" class="mx-auto mb-4 w-40 h-40 object-contain">
+                </a>
+                <h3 class="text-2xl font-semibold mb-2">AWS Solutions Architect</h3>
+                <p class="text-gray-600">Earned in 2023</p>
+            </div>
+            <!-- Kubernetes Application Developer Certification -->
+            <div class="bg-white rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition duration-300">
+                <a href="https://www.credly.com/badges/221e2876-f14b-4e55-bd3d-c6fd193712e1" target="_blank">
+                    <img src="images/ckad.png" alt="Certified Kubernetes Application Developer" class="mx-auto mb-4 w-40 h-40 object-contain">
+                </a>
+                <h3 class="text-2xl font-semibold mb-2">Kubernetes Application Developer</h3>
+                <p class="text-gray-600">Earned in 2024</p>
+            </div>
+            <!-- Kubernetes Administrator Certification -->
+            <div class="bg-white rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition duration-300">
+                <a href="https://www.credly.com/badges/abff25f3-3a93-4fdd-8241-389b6571d8b1" target="_blank">
+                    <img src="images/cka.png" alt="Certified Kubernetes Administrator" class="mx-auto mb-4 w-40 h-40 object-contain">
+                </a>
+                <h3 class="text-2xl font-semibold mb-2">Kubernetes Administrator</h3>
+                <p class="text-gray-600">Earned in 2024</p>
+            </div>
+            <!-- Terraform Associate Certification -->
+            <div class="bg-white rounded-lg shadow-lg p-6 transform hover:-translate-y-2 transition duration-300">
+                <a href="https://www.credly.com/badges/d1f8f2ed-21cd-4e46-81d8-6d1a7562b3cf" target="_blank">
+                    <img src="images/tf.png" alt="Hashicorp Certified Terraform Associate" class="mx-auto mb-4 w-40 h-40 object-contain">
+                </a>
+                <h3 class="text-2xl font-semibold mb-2">Terraform Associate</h3>
+                <p class="text-gray-600">Earned in 2024</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Freetime Activities Section -->
+<section id="activities" class="py-20 bg-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-12">Freetime Activities</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Activity Cards -->
+            <div class="flex flex-col items-center">
+                <img src="images/yoga.svg" alt="Yoga" class="w-24 h-24 mb-4">
+                <h3 class="text-xl font-semibold">Yoga</h3>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="images/books.svg" alt="Books" class="w-24 h-24 mb-4">
+                <h3 class="text-xl font-semibold">Reading</h3>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="images/gaming.svg" alt="PC Gaming" class="w-24 h-24 mb-4">
+                <h3 class="text-xl font-semibold">PC Gaming</h3>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="images/cooking.svg" alt="Cooking" class="w-24 h-24 mb-4">
+                <h3 class="text-xl font-semibold">Cooking</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Languages Section -->
+<section id="languages" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-12">Languages I Speak</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Language Cards -->
+            <div class="flex flex-col items-center">
+                <div class="text-8xl font-bold mb-4">A</div>
+                <h3 class="text-xl font-semibold">English</h3>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="text-8xl font-bold mb-4">Ä</div>
+                <h3 class="text-xl font-semibold">German</h3>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="text-8xl font-bold mb-4">అ</div>
+                <h3 class="text-xl font-semibold">Telugu</h3>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="text-8xl font-bold mb-4">அ</div>
+                <h3 class="text-xl font-semibold">Tamil</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-6" data-key="contact-title">Get in Touch</h2>
+        <div class="flex justify-center space-x-8 mt-6">
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/shushanthsanjaykumar" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300">
+                <!-- LinkedIn Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" viewBox="0 0 36 36" fill="currentColor">
+                    <path d="M34,34h-7V23.69c0-2.47-0.05-5.66-3.45-5.66c-3.45,0-3.98,2.7-3.98,5.48V34h-7V11h6.72v3.14h0.1
+                    c0.94-1.78,3.23-3.65,6.64-3.65c7.09,0,8.4,4.67,8.4,10.74V34z M3.46,7.5C1.55,7.5,0,5.95,0,4S1.55,0.5,3.46,0.5
+                    S6.91,2.05,6.91,4S5.37,7.5,3.46,7.5z M0,34h7V11H0V34z"/>
+                </svg>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/CoffeeRaptor" target="_blank" class="text-gray-800 hover:text-gray-900 transition duration-300">
+                <!-- GitHub Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.4 7.85 10.95.57.11.77-.25.77-.55
+                    0-.27-.01-.99-.01-1.95-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7
+                    1.16.08 1.76 1.19 1.76 1.19 1.03 1.75 2.7 1.24 3.35.95.1-.74.4-1.24.72-1.53
+                    -2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0
+                    .96-.31 3.15 1.18a10.94 10.94 0 012.86-.39c.97 0 1.95.13 2.86.39 2.19-1.5 3.15-1.18
+                    3.15-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.09 0 4.41-2.7 5.4-5.27
+                    5.69.41.35.77 1.06.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.78.55C20.7
+                    21.4 24 17.08 24 12c0-6.35-5.15-11.5-12-11.5z"/>
+                </svg>
+            </a>
+            <!-- Email -->
+            <a href="mailto:shushanthsanjaykumar@gmail.com" class="text-red-600 hover:text-red-800 transition duration-300">
+                <!-- Email Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 13.293l11.95-7.928A.999.999 0 0023 4H1a1 1 0 00-.95 1.365l11.95 7.928z"/>
+                    <path d="M12 15.707l-12-7.95V20a1 1 0 001 1h22a1 1 0 001-1V7.757l-12 7.95z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2024 Shushanth Sanjay Kumar</p>
+    </div>
+</footer>
+
+<!-- JavaScript Files -->
+<script src="js/script.js"></script>
+</body>
+</html>
