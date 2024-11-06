@@ -10,11 +10,13 @@ resource "aws_cloudfront_distribution" "website_distribution" {
     domain_name              = aws_s3_bucket.website_bucket.bucket_regional_domain_name
     origin_id                = aws_s3_bucket.website_bucket.bucket
     origin_access_control_id = aws_cloudfront_origin_access_control.s3_access.id
+    origin_path              = "/WebsiteFiles"
   }
   provider            = aws.us_east_1
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
+  price_class         = "PriceClass_100"
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
