@@ -35,7 +35,6 @@ resource "aws_cloudfront_distribution" "website_distribution" {
     acm_certificate_arn      = aws_acm_certificate.website_cert.arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
-    certificate_source       = "acm"
   }
 
   restrictions {
