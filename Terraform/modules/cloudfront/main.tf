@@ -1,27 +1,31 @@
 resource "aws_cloudfront_origin_access_control" "s3_access" {
-  name                              = "S3AccessControl"
+  name                         = "S3AccessControl-${var.bucket_name}"
   origin_access_control_origin_type = "s3"
-  signing_behavior                  = "always"
-  signing_protocol                  = "sigv4"
+  signing_behavior             = "always"
+  signing_protocol             = "sigv4"
 }
 
 resource "aws_cloudfront_distribution" "website_distribution" {
   origin {
-    domain_name              = aws_s3_bucket.website_bucket.bucket_regional_domain_name
-    origin_id                = aws_s3_bucket.website_bucket.bucket
+    domain_name              = var.bucket_regional_domain_name
+    origin_id                = var.bucket_name
     origin_access_control_id = aws_cloudfront_origin_access_control.s3_access.id
-    origin_path              = "/WebsiteFiles"
+    origin_path              = var.origin_path
   }
-  provider            = aws.us_east_1
+
+  provider = aws.us_east_1
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
-  price_class         = "PriceClass_100"
+  price_class         = "PriceClass_100" # Price class for US and Europe only
+
+  aliases             = var.cloudfront_aliases
+
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = aws_s3_bucket.website_bucket.bucket
+    target_origin_id = var.bucket_name
 
     viewer_protocol_policy = "redirect-to-https"
 
@@ -34,7 +38,7 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn      = aws_acm_certificate.website_cert.arn
+    acm_certificate_arn      = var.certificate_arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
   }
@@ -46,6 +50,6 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   }
 
   tags = merge(var.tags, {
-    Name = "${var.domain_name}-distribution"
+    Name = "${var.bucket_name}-distribution"
   })
 }
