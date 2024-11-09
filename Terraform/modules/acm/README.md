@@ -1,11 +1,11 @@
 # AWS Certificate Manager (ACM) Terraform Module
 
-This Terraform module automates the provisioning and management of SSL/TLS certificates using AWS Certificate Manager (ACM). It ensures secure communication for your domains with minimal manual effort.
+This Terraform module automates the provisioning and management of SSL/TLS certificates using AWS Certificate Manager (ACM). It ensures secure communication for the domains with minimal manual effort.
 
 ## What This Module Does
 
 1. **Request ACM Certificates**  
-   Automatically requests SSL/TLS certificates for your specified domain and optional subdomains using DNS validation.
+   Automatically requests SSL/TLS certificates for the specified domain and optional subdomains using DNS validation.
 
 2. **Configure DNS Validation Records**  
    Creates the necessary Route 53 DNS CNAME records to validate domain ownership, eliminating the need for manual DNS setup.
