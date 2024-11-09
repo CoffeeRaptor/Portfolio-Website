@@ -23,4 +23,8 @@ The frontend of the website is built using:
 
 All frontend files are stored in the S3 bucket and served through CloudFront. Domain is registered with Amazon registrar and the monthly cost approximate would be 2-4 dollars.
 
+## A basic visual architectural overview
+
+![image](https://github.com/user-attachments/assets/9a0bee51-ada9-480e-9009-d36425b85529)
+
 ---
