@@ -26,6 +26,7 @@ module "cloudfront" {
   bucket_name                 = module.s3.bucket_name
   bucket_regional_domain_name = module.s3.bucket_regional_domain_name
   certificate_arn             = module.acm.certificate_arn
+  origin_path                 = "/WebsiteFiles"
   cloudfront_aliases          = ["shushanthsanjaykumar.com","www.shushanthsanjaykumar.com"]
   tags                        = var.tags
 }

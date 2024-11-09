@@ -7,6 +7,7 @@ resource "aws_s3_bucket" "website_bucket" {
   })
 }
 
+#config to allow secure access, refer aws documentation for more info
 resource "aws_s3_bucket_public_access_block" "website_public_access_block" {
   bucket                  = aws_s3_bucket.website_bucket.id
   block_public_acls       = true
@@ -15,6 +16,7 @@ resource "aws_s3_bucket_public_access_block" "website_public_access_block" {
   restrict_public_buckets = false
 }
 
+#allow s3 bucket access only from cloudfront
 data "aws_iam_policy_document" "s3_bucket_policy" {
   statement {
     actions = ["s3:GetObject"]
@@ -31,6 +33,7 @@ data "aws_iam_policy_document" "s3_bucket_policy" {
   }
 }
 
+#attaching the policy
 resource "aws_s3_bucket_policy" "website_bucket_policy" {
   bucket = var.bucket_name
   policy = data.aws_iam_policy_document.s3_bucket_policy.json

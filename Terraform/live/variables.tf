@@ -8,6 +8,6 @@ variable "tags" {
   description = "A map of tags to apply to resources."
   type        = map(string)
   default = {
-    Environment = "portfolio-website"
+    Service = "portfolio-website"
   }
 }

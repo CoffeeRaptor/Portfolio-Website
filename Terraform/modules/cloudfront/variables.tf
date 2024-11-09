@@ -14,9 +14,8 @@ variable "certificate_arn" {
 }
 
 variable "origin_path" {
-  description = "Optional origin path for CloudFront."
+  description = "Origin path for CloudFront."
   type        = string
-  default     = "/WebsiteFiles"
 }
 
 variable "tags" {
