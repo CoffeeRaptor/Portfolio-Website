@@ -22,7 +22,7 @@ jobs:
 
       - name: Sync website to S3
         run: |
-          aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete --exclude ".git/*" --exclude ".github/*" --exclude "Terraform/*" --exclude "README.md"
+          aws s3 sync ./WebsiteFiles s3://${{ secrets.S3_BUCKET_NAME }} --delete --exclude ".git/*" --exclude ".github/*" --exclude "Terraform/*" --exclude "README.md"
 
       - name: Invalidate CloudFront Cache
         run: |
