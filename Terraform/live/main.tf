@@ -31,3 +31,16 @@ module "cloudfront" {
   tags                        = var.tags
 }
 
+module "github_deployer"{
+  source          = "../modules/github-deployer"
+  user_name       = "github-actions-deployer"
+  s3_bucket_name  = module.s3.bucket_name
+}
+
+module "dynamodb" {
+  source      = "../modules/dynamodb"
+  table_name  = "terraform-lock"
+  tags        = var.tags
+}
+
+

@@ -19,7 +19,7 @@ resource "aws_route53_record" "main_domain" {
 #To redirect the subdomain with "www." also to the cloudfront distribution
 resource "aws_route53_record" "www_cname" {
   zone_id = aws_route53_zone.main.zone_id
-  name    = var.subdomain
+  name = "${var.subdomain}.${var.domain_name}"
   type    = "CNAME"
   ttl     = 300
   records = [var.cloudfront_distribution_domain_name]
