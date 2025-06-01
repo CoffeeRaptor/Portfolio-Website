@@ -8,7 +8,6 @@ resource "aws_cloudfront_origin_access_control" "s3_access" {
 
 resource "aws_cloudfront_distribution" "website_distribution" {
   # tfsec:ignore:aws-cloudfront-enable-waf:aws_cloudfront_distribution.website_distribution
-  #origin configs to fetch the respective s3 bucket
   origin {
     domain_name              = var.bucket_regional_domain_name
     origin_id                = var.bucket_name
