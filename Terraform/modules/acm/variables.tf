@@ -19,3 +19,10 @@ variable "zone_id" {
   description = "Route53 Zone ID for domain validation."
   type        = string
 }
+
+variable "enable_validation" {
+  description = "Whether to perform DNS validation for ACM cert."
+  type        = bool
+  default     = true
+}
+

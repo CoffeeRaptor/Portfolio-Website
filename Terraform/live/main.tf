@@ -12,6 +12,7 @@ module "acm" {
   subdomain   = var.subdomain
   tags        = var.tags
   zone_id     = module.route53.zone_id
+  enable_validation = false # disable if a cert already exists and needs to be imported
 }
 
 module "s3" {
