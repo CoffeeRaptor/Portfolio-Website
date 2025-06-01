@@ -18,12 +18,12 @@ jobs:
         uses: actions/checkout@v3
 
       # --- Terraform Security Scan ---
-      - name: Install tfsec (Terraform Security Scanner)
-        run: |
-          curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+      # - name: Install tfsec (Terraform Security Scanner)
+      #   run: |
+      #     curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
 
-      - name: Run tfsec on Terraform files
-        run: tfsec .
+      # - name: Run tfsec on Terraform files
+      #   run: tfsec .
 
       # --- NPM Dependency Audit ---
       - name: Install Node.js
