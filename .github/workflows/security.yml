@@ -1,0 +1,51 @@
+name: Security Scanning
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 1 * * 1'  # Every Monday at 1:00 AM
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # --- Terraform Security Scan ---
+      - name: Install tfsec (Terraform Security Scanner)
+        run: |
+          curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+
+      - name: Run tfsec on Terraform files
+        run: tfsec .
+
+      # --- NPM Dependency Audit ---
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run npm audit
+        run: npm audit --audit-level=high
+
+      # --- Retire.js Vulnerability Scan for JS Libraries ---
+      - name: Install Retire.js
+        run: npm install -g retire
+
+      - name: Run Retire.js scan
+        run: retire
+
+      # --- Secrets Scan using TruffleHog ---
+      - name: Run TruffleHog to detect secrets
+        uses: trufflesecurity/trufflehog@main
+        with:
+          scanArguments: '--repo .'
