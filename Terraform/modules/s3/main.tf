@@ -7,6 +7,16 @@ resource "aws_s3_bucket" "website_bucket" {
   })
 }
 
+resource "aws_s3_bucket_server_side_encryption_configuration" "website_bucket_sse" {
+  bucket = aws_s3_bucket.website_bucket.id
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
+}
+
 #config to allow secure access, refer aws documentation for more info
 resource "aws_s3_bucket_public_access_block" "website_public_access_block" {
   bucket                  = aws_s3_bucket.website_bucket.id
