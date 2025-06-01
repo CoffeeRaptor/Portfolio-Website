@@ -1,0 +1,25 @@
+#ignore:
+#  - id: aws-dynamodb-enable-recovery
+#    resource: aws_dynamodb_table.terraform_lock
+#  - id: aws-dynamodb-enable-recovery
+#    resource: module.dynamodb.aws_dynamodb_table.terraform_lock
+#
+#  - id: aws-cloudfront-enable-logging
+#    resource: module.cloudfront.aws_cloudfront_distribution.website_distribution
+#  - id: aws-cloudfront-enable-waf
+#    resource: module.cloudfront.aws_cloudfront_distribution.website_distribution
+#
+#  - id: aws-s3-enable-bucket-logging
+#    resource: module.s3.aws_s3_bucket.website_bucket
+#  - id: aws-s3-enable-versioning
+#    resource: module.s3.aws_s3_bucket.website_bucket
+#  - id: aws-s3-encryption-customer-key
+#    resource: module.s3.aws_s3_bucket_server_side_encryption_configuration.website_bucket_sse
+#
+#  - id: aws-dynamodb-table-customer-key
+#    resource: aws_dynamodb_table.terraform_lock
+#  - id: aws-dynamodb-table-customer-key
+#    resource: module.dynamodb.aws_dynamodb_table.terraform_lock
+#
+#  - id: aws-iam-no-user-attached-policies
+#    resource: module.github_deployer.aws_iam_user.this
